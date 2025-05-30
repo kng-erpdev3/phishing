@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="sr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Па мајку ти... Заварали сте се!</title>
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Oswald:wght@400;600&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Oswald:wght@400;600&display=swap');
+
+    
+    body {
+      font-family: 'Fira Sans', sans-serif;
+      background: linear-gradient(135deg, #c41e3a 0%, #ffffff 25%, #0c4b99 50%, #ffffff 75%, #c41e3a 100%);
+      background-size: 400% 400%;
+      animation: serbianFlag 8s ease-in-out infinite;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    @keyframes serbianFlag {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      position: relative;
+      backdrop-filter: blur(10px);
+      border: 3px solid #c41e3a;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .logo-text {
+      /* font-family: 'Oswald', sans-serif; */
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 2.5em;
+      font-weight: 600;
+      color: #0c4b99;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .lepinja-icon {
+      font-size: 3em;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+    
+    .main-content {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    
+    .image-section {
+      flex: 0 0 400px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .disappointed-frame {
+      position: relative;
+      display: inline-block;
+      padding: 15px;
+      background: linear-gradient(45deg, #c41e3a, #0c4b99);
+      border-radius: 20px;
+      transform: rotate(-2deg);
+      transition: transform 0.3s ease;
+    }
+    
+    .disappointed-frame:hover {
+      transform: rotate(2deg) scale(1.05);
+    }
+    
+    .disappointed-img {
+      width: 350px;
+      height: auto;
+      border-radius: 15px;
+      border: 5px solid white;
+      filter: sepia(20%) saturate(120%);
+    }
+    
+    .speech-bubble {
+      position: absolute;
+      top: -50px;
+      right: -80px;
+      background: #ffeb3b;
+      color: #333;
+      padding: 15px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 30px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #ffeb3b;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .text-section {
+      flex: 1;
+      min-width: 500px;
+    }
+    
+    .main-title {
+      /* font-family: 'Oswald', sans-serif; */
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 3.5em;
+      color: #c41e3a;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      transform: rotate(-1deg);
+    }
+    
+    .subtitle {
+      font-size: 1.8em;
+      color: #0c4b99;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    
+    .content-text {
+      font-size: 1.3em;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      border-left: 5px solid #c41e3a;
+    }
+    
+    .warning-box {
+      background: linear-gradient(135deg, #ff9800, #f44336);
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      margin: 30px 0;
+      box-shadow: 0 10px 30px rgba(244, 67, 54, 0.3);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+    
+    .lepinja-section {
+      background: linear-gradient(135deg, #4caf50, #8bc34a);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 30px 0;
+      text-align: center;
+      font-size: 1.2em;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(12, 75, 153, 0.1);
+      border-radius: 15px;
+      border: 2px dashed #0c4b99;
+    }
+    
+    .signature {
+      /* font-family: 'Oswald', sans-serif; */
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 1.8em;
+      color: #c41e3a;
+      font-weight: 600;
+    }
+    
+    .contact-info {
+      font-size: 1.1em;
+      color: #0c4b99;
+      margin-top: 10px;
+    }
+    
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .floating-lepinja {
+      position: absolute;
+      font-size: 2em;
+      opacity: 0.1;
+      animation: floatAround 15s linear infinite;
+    }
+    
+    @keyframes floatAround {
+      0% { transform: translateX(-100px) translateY(100vh) rotate(0deg); }
+      100% { transform: translateX(100vw) translateY(-100px) rotate(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+      .image-section {
+        flex: none;
+      }
+      .text-section {
+        min-width: auto;
+      }
+      .main-title {
+        font-size: 2.5em;
+      }
+      .speech-bubble {
+        position: static;
+        margin: 20px 0;
+      }
+    }
+
+  .komplet-warning {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff700; /* светложута или нека друга јака боја */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 1.4em;
+  }
+
+  .komplet-warning {
+  background: linear-gradient(90deg, #ffffff, #ffeb3b, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+    
+  </style>
+</head>
+<body>
+  <div class="floating-elements">
+    <div class="floating-lepinja" style="left: 10%; animation-delay: 0s;">🐟</div>
+    <div class="floating-lepinja" style="left: 30%; animation-delay: 5s;">🧄</div>
+    <div class="floating-lepinja" style="left: 50%; animation-delay: 10s;">🥒</div>
+    <div class="floating-lepinja" style="left: 70%; animation-delay: 15s;">🥖</div>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <span class="lepinja-icon">🐟</span>
+        <span class="logo-text">SINTERFUSE УЖИЦЕ</span>
+        <span class="lepinja-icon">🐟</span>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="image-section">
+        <div class="disappointed-frame">
+          <img src="123.gif" alt="Разочарани ИТ менаџер" class="disappointed-img">
+		  <div class="speech-bubble">Ајде бре!</div>
+        </div>
+      </div>
+
+      <div class="text-section">
+        <h1 class="main-title">ПАААА ЈОООЈ!</h1>
+        <h2 class="subtitle">Упецали сте се к'о клен на вишњу!</h2>
+
+        <div class="content-text">
+          <strong>Браћо и сестре,</strong> очекивао сам више од вас! Кликнули сте на линк који је изгледао као прави - али могла је да буде замка гора од звучног топа 15. Марта.
+        </div>
+
+        <div class="content-text">
+          Овај пут је било само тестирање. Следећи пут може бити прави напад, и онда ће штета бити гора од пожара на депонији „Дубоко”.
+        </div>
+
+        <div class="warning-box">
+          ⚠️ УВЕК СТАНИ И РАЗМИСЛИ ПРЕ НЕГО ШТО КЛИКНЕШ НА ЛИНК! ⚠️
+        </div>
+
+        <div class="content-text">
+          Да, мејл је смарао као прави ИТ мејл, али адреса није била права. Ово је тачно како сајбер кримоси раде, претварају се да су неко други да би кликнули на њихов линк. На пример, кликнете да платите рачун ЕПС-у, а новац заврши на рачуну непознате фирме повезане са влашћу, као што је Alta Pay... а не, чекај, то није за овде...
+        </div>
+
+        <div class="lepinja-section">
+          <strong>🫓 КОМПЛЕТ ЛЕПИЊА МУДРОСТ: 🫓</strong><br>
+          <!-- <strong>Као што не једеш комплет лепињу са ћевапима и кока колом, тако прво провериш ко шаље мејл, па тек онда кликћеш!</strong> -->
+          <strong class="komplet-warning">„Као што не једеш комплет лепињу са ћевапима и кока колом,<br> тако прво провериш ко шаље мејл, па тек онда кликћеш!”</strong>
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="signature">Ваш (разочарани) ИТ</div>
+      <div class="contact-info">
+        SINTERFUSE УЖИЦЕ - Где технологија среће традицију<br>
+        📧 info@sinterfuse.rs | 📞 031/555-333
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Додај мало интерактивности
+    document.querySelector('.disappointed-frame').addEventListener('click', function() {
+      alert('Шта кликћете опет?! Нисте ли научили лекцију? 😤');
+    });
+
+    // Промени текст у балончићу сваких пар секунди
+    const speechTexts = ['Ајде бре!', 'Па јооој!', 'Мајку ти!', 'Е брате...', 'Па не може!'];
+    let currentIndex = 0;
+    
+    setInterval(() => {
+      const bubble = document.querySelector('.speech-bubble');
+      if (bubble) {
+        bubble.textContent = speechTexts[currentIndex];
+        currentIndex = (currentIndex + 1) % speechTexts.length;
+      }
+    }, 3000);
+  </script>
+</body>
+</html>
